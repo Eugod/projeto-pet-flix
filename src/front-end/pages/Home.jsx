@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
@@ -9,7 +10,7 @@ const API = "http://localhost:3000/";
 
 export default function Home() {
     const [videos, setVideos] = useState(null);
-    const [videoAtual, setVideoAtual] = useState(6);
+    const [videoAtual, setVideoAtual] = useState(0);
 
     const buscarVideos = async () => {
         await axios.get(API)
@@ -23,6 +24,22 @@ export default function Home() {
     useEffect(() => {
         buscarVideos();
     }, []);
+
+    const proximoVideo = () => {
+        if (videoAtual < 9) {
+            setVideoAtual(videoAtual + 1);
+        } else {
+            setVideoAtual(0);
+        }
+    }
+
+    const videoAnterior = () => {
+        if (videoAtual > 0) {
+            setVideoAtual(videoAtual - 1);
+        } else {
+            setVideoAtual(9);
+        }
+    }
 
     return (
         <div>
@@ -43,8 +60,8 @@ export default function Home() {
             }
 
             <div>
-                <button>Anterior</button>
-                <button>Próximo</button>
+                <button onClick={videoAnterior}>Anterior</button>
+                <button onClick={proximoVideo}>Próximo</button>
             </div>
         </div>
     );
