@@ -5,6 +5,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./home.css";
 
 
 const API = "http://localhost:3000/";
@@ -67,26 +68,32 @@ export default function Home() {
     }, [videoAnterior, proximoVideo]);
 
     return (
-        <div>
-            <h1>Vídeos</h1>
+        <div className="container">
+            <h1 className="titulo">Vídeos</h1>
 
             {
                 videos &&
                 <div>
-                    <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef}>
-                        <img src={videos[videoAtual].capa} />
-                        <h2>{videos[videoAtual].titulo}</h2>
-                        <div>
-                            <img src={videos[videoAtual].fotoperfil} />
-                            <h3>{videos[videoAtual].nomeperfil}</h3>
+                    <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef} className="video-container">
+                        <img src={videos[videoAtual].capa} className="capa-video" />
+
+                        <div className="titulo-video-container">
+                            <h2 className="titulo-video">{videos[videoAtual].titulo}</h2>
+                        </div>
+
+                        <div className="video-container-usuario">
+                            <img src={videos[videoAtual].fotoperfil} className="img-usuario" />
+
+                            <h3 className="nome-usuario">{videos[videoAtual].nomeperfil}</h3>
                         </div>
                     </Link>
                 </div>
             }
 
-            <div>
-                <button onClick={videoAnterior}>Anterior</button>
-                <button onClick={proximoVideo}>Próximo</button>
+            <div className="btn-container">
+                <button onClick={videoAnterior} className="btn-anterior">Anterior</button>
+
+                <button onClick={proximoVideo} className="btn-proximo">Próximo</button>
             </div>
         </div>
     );
