@@ -1,0 +1,29 @@
+.video-titulo {
+    font-size: 50px;
+}
+
+.video {
+    height: 700px;
+    width: 1600px;
+}
+
+.btn-voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: #9BE8D8;
+    border: 0;
+    width: 200px;
+    height: 3em;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-voltar:active {
+    background-color: #75C6B8;
+    transform: translateY(1.5px);
+}

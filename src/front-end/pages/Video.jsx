@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./video.css";
 
 const API = "http://localhost:3000/";
 
@@ -44,15 +45,18 @@ export default function Video() {
     }, [video]);
 
     return (
-        <div>
-            <h1>{titulo}</h1>
+        <div className="container">
+            <h1 className="video-titulo">{titulo}</h1>
+
             {
                 video &&
+
                 <div>
-                    <iframe src={video[0].linkvideo}></iframe>
+                    <iframe src={video[0].linkvideo} className="video"></iframe>
                 </div>
             }
-            <Link to={"/"} ref={linkRef}>
+
+            <Link to={"/"} ref={linkRef} className="btn-voltar">
                 Voltar
             </Link>
         </div>
