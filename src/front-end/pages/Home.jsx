@@ -72,7 +72,7 @@ export default function Home() {
             <h1 className="titulo">Vídeos</h1>
 
             {
-                videos &&
+                videos && videos[videoAtual] && (
                 <div>
                     <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef} className="video-container">
                         <img src={videos[videoAtual].capa} className="capa-video" />
@@ -88,7 +88,7 @@ export default function Home() {
                         </div>
                     </Link>
                 </div>
-            }
+            )}
 
             <div className="btn-container">
                 <button onClick={videoAnterior} className="btn-anterior">Anterior</button>

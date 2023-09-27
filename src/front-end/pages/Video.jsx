@@ -48,13 +48,12 @@ export default function Video() {
         <div className="container">
             <h1 className="video-titulo">{titulo}</h1>
 
-            {
-                video &&
+            {video && video.length > 0 && video[0].linkvideo && (
 
                 <div>
                     <iframe src={video[0].linkvideo} className="video"></iframe>
                 </div>
-            }
+            )}
 
             <Link to={"/"} ref={linkRef} className="btn-voltar">
                 Voltar
