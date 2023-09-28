@@ -18,7 +18,7 @@ PORT = "numero-da-porta"
 
 Para iniciar os servidores do Pet-flix, utilize o seguinte comando:
 
-npm start
+`npm start`
 
 Isso irá iniciar tanto o servidor back-end quanto o servidor front-end.
 
