@@ -73,7 +73,7 @@ export default function Home() {
 
             {
                 videos && videos[videoAtual] && (
-                <div>
+                <div className="div-video-container">
                     <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef} className="video-container">
                         <img src={videos[videoAtual].capa} className="capa-video" />
 
