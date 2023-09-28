@@ -50,7 +50,7 @@ export default function Video() {
 
             {video && video.length > 0 && video[0].linkvideo && (
 
-                <div>
+                <div className="div-container-video">
                     <iframe src={video[0].linkvideo} className="video"></iframe>
                 </div>
             )}
