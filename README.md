@@ -1,6 +1,6 @@
 # Projeto Pet-flix
 
-Este é um projeto desenvolvido pelo SENAI como parte da matéria de Desenvolvimento de Sistemas. O Pet-flix é uma aplicação que permite aos usuários explorar uma vasta coleção de informações sobre animais de estimação.
+Este é um projeto desenvolvido pelo alunos do SENAI Eugênio e Ricardo como parte da matéria de Desenvolvimento de Sistemas.
 
 ## Pré-requisitos
 
