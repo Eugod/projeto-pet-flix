@@ -46,6 +46,8 @@ describe('Teste de seleção de vídeo', () => {
   it('Deve voltar para a home', () => {
     cy.get('.video-container').should('exist').click();
 
+   cy.get('.div-container-video').should('exist');
+
    cy.get('.btn-voltar').should('exist').click();
 
    cy.get('.video-container').should('exist');
