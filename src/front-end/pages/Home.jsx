@@ -8,7 +8,7 @@ import axios from "axios";
 import "./home.css";
 
 
-const API = "http://localhost:3000/";
+const API = "https://petflix-sofz.onrender.com/";
 
 export default function Home() {
     const [videos, setVideos] = useState(null);
