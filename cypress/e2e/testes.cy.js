@@ -1,6 +1,4 @@
 /* eslint-disable no-undef */
-import 'cypress-wait-until';
-
 
 describe('Teste de Abertura do Sistema', () => {
   it('Deve abrir o sistema sem erros', () => {
