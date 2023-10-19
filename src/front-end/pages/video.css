@@ -1,6 +1,7 @@
 .video-titulo {
     font-size: 3em;
     margin: 0;
+    color :aliceblue
 }
 
 .div-container-video {
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    background-color: #9BE8D8;
+    background-color: #FF9900;
     border: 0;
     width: 20%;
     height: 3em;
@@ -32,6 +33,14 @@
 }
 
 .btn-voltar:active {
-    background-color: #75C6B8;
+    background-color: #FF9900;
     transform: translateY(1.5px);
+}
+
+.Logo{
+    width: 155px;
+    height: 70px;
+    position: absolute;
+  top: 10px; /* Distância em relação ao topo da div .container */
+  left: 10px; /* Distância em relação à direita da div .container */
 }

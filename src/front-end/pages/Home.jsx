@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./home.css";
+import pethub from "../assets/pethub.jpg"
 
 
 const API = "https://petflix-sofz.onrender.com/";
@@ -69,7 +70,9 @@ export default function Home() {
 
     return (
         <div className="container">
-            <h1 className="titulo">Vídeos</h1>
+          <div>
+                <img className="Logo" src={pethub} />
+            </div>
 
             {
                 videos && videos[videoAtual] && (

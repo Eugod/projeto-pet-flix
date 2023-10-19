@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./video.css";
+import pethub from "../assets/pethub.jpg"
+
 
 const API = "http://localhost:3000/";
 
@@ -46,6 +48,11 @@ export default function Video() {
 
     return (
         <div className="container">
+
+<div>
+                <img className="Logo" src={pethub} />
+            </div>
+
             <h1 className="video-titulo">{titulo}</h1>
 
             {video && video.length > 0 && video[0].linkvideo && (
