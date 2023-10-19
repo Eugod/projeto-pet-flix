@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./video.css";
-import pethub from "../assets/pethub.jpg"
+import pethub from "../assets/pethub.png"
 
 
 const API = "https://petflix-sofz.onrender.com/";
