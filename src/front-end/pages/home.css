@@ -92,3 +92,32 @@
   top: 10px; /* Distância em relação ao topo da div .container */
   left: 10px; /* Distância em relação à direita da div .container */
 }
+@media only screen and (max-width : 600px){
+
+
+    .btn-anterior,
+    .btn-proximo {
+        border: 0;
+        width: 45%;
+        height: 3em;
+        border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+    
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+  
+    .div-video-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150%;
+    }
+    
+
+}
