@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./video.css";
 import pethub from "../assets/pethub.png"
+import pornhubintro from "../assets/pornhubintro.mp3"
 
 
 const API = "https://petflix-sofz.onrender.com/";
@@ -45,6 +46,33 @@ export default function Video() {
             document.body.removeEventListener("keydown", handleKeyPress);
         };
     }, [video]);
+
+    useEffect(() => {
+        const audio = new Audio(pornhubintro);
+        let timer;
+    
+        // Função para tocar o som
+        function playSound() {
+          // Verifique se o áudio não está tocando atualmente para evitar sobreposições
+          if (audio.paused) {
+            audio.play();
+          }
+        }
+    
+        // Inicie o temporizador para tocar o som a cada 10 segundos
+        timer = setInterval(() => {
+          playSound();
+        }, 10000);
+    
+        // Limpe o temporizador quando o componente for desmontado
+        return () => {
+          clearInterval(timer);
+        };
+      }, []);
+
+
+
+
 
     return (
         <div className="container">

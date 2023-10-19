@@ -7,9 +7,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./home.css";
 import pethub from "../assets/pethub.png"
-
+import React, { Component } from 'react';
+import pornhubintro from "../assets/pornhubintro.mp3"
 
 const API = "https://petflix-sofz.onrender.com/";
+
+
 
 export default function Home() {
     const [videos, setVideos] = useState(null);
@@ -68,30 +71,65 @@ export default function Home() {
         };
     }, [videoAnterior, proximoVideo]);
 
+
+
+
+    useEffect(() => {
+        const audio = new Audio(pornhubintro);
+        let timer;
+    
+        // Função para tocar o som
+        function playSound() {
+          // Verifique se o áudio não está tocando atualmente para evitar sobreposições
+          if (audio.paused) {
+            audio.play();
+          }
+        }
+    
+        // Inicie o temporizador para tocar o som a cada 10 segundos
+        timer = setInterval(() => {
+          playSound();
+        }, 10000);
+    
+        // Limpe o temporizador quando o componente for desmontado
+        return () => {
+          clearInterval(timer);
+        };
+      }, []);
+    
+    
+            
+        
+
+    
+
+
+
+
     return (
         <div className="container">
-          <div>
+            <div>
                 <img className="Logo" src={pethub} />
             </div>
 
             {
                 videos && videos[videoAtual] && (
-                <div className="div-video-container">
-                    <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef} className="video-container">
-                        <img src={videos[videoAtual].capa} className="capa-video" />
+                    <div className="div-video-container">
+                        <Link to={`/video/${videos[videoAtual].id}/${videos[videoAtual].titulo}`} ref={linkRef} className="video-container">
+                            <img src={videos[videoAtual].capa} className="capa-video" />
 
-                        <div className="titulo-video-container">
-                            <h2 className="titulo-video">{videos[videoAtual].titulo}</h2>
-                        </div>
+                            <div className="titulo-video-container">
+                                <h2 className="titulo-video">{videos[videoAtual].titulo}</h2>
+                            </div>
 
-                        <div className="video-container-usuario">
-                            <img src={videos[videoAtual].fotoperfil} className="img-usuario" />
+                            <div className="video-container-usuario">
+                                <img src={videos[videoAtual].fotoperfil} className="img-usuario" />
 
-                            <h3 className="nome-usuario">{videos[videoAtual].nomeperfil}</h3>
-                        </div>
-                    </Link>
-                </div>
-            )}
+                                <h3 className="nome-usuario">{videos[videoAtual].nomeperfil}</h3>
+                            </div>
+                        </Link>
+                    </div>
+                )}
 
             <div className="btn-container">
                 <button onClick={videoAnterior} className="btn-anterior">Anterior</button>
