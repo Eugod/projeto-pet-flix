@@ -9,7 +9,7 @@ import "./video.css";
 import pethub from "../assets/pethub.jpg"
 
 
-const API = "http://localhost:3000/";
+const API = "https://petflix-sofz.onrender.com/";
 
 export default function Video() {
     const { id, titulo } = useParams();
