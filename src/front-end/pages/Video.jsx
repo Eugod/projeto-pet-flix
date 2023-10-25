@@ -62,7 +62,7 @@ export default function Video() {
         // Inicie o temporizador para tocar o som a cada 10 segundos
         timer = setInterval(() => {
           playSound();
-        }, 10000);
+        }, 60000);
     
         // Limpe o temporizador quando o componente for desmontado
         return () => {
